@@ -1,0 +1,199 @@
+\documentclass[pdf,aspectratio=169]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{minted}
+\usepackage{tikz}
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+\usepackage{relsize}
+\usepackage{wasysym}
+
+\usetikzlibrary{trees}
+
+\mode<presentation>{
+  \usetheme{Frankfurt}
+  \useoutertheme{infolines}
+}
+
+\setbeamertemplate{headline}
+
+\title{Introduction to Haskell}
+\author{Artem Ohanjanyan}
+\institute{LvivHaskell}
+\date{24.11.2019}
+
+\newcommand{\shrug}[1][]{%
+\begin{tikzpicture}[baseline,x=0.8\ht\strutbox,y=0.8\ht\strutbox,line width=0.125ex,#1]
+\def\arm{(-2.5,0.95) to (-2,0.95) (-1.9,1) to (-1.5,0) (-1.35,0) to (-0.8,0)};
+\draw \arm;
+\draw[xscale=-1] \arm;
+\def\headpart{(0.6,0) arc[start angle=-40, end angle=40,x radius=0.6,y radius=0.8]};
+\draw \headpart;
+\draw[xscale=-1] \headpart;
+\def\eye{(-0.075,0.15) .. controls (0.02,0) .. (0.075,-0.15)};
+\draw[shift={(-0.3,0.8)}] \eye;
+\draw[shift={(0,0.85)}] \eye;
+% draw mouth
+\draw (-0.1,0.2) to [out=15,in=-100] (0.4,0.95); 
+\end{tikzpicture}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Haskell}
+  \pause
+  \begin{itemize}
+    \item Pure functional
+    \item Lazy
+    \item Statically typed
+    \item With strong types and type inference
+    \item Compiled (with an interpreter)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Why learn Haskell}
+  \begin{itemize}
+    \pause
+    \item Probably not to find a job (0 vacancies in Ukraine \frownie{})
+    \pause
+    \item It's a challenge
+    \pause
+    \item Expand your mind with no illegal substances
+    \pause
+    \item Familiarize yourself with FP before everyone else
+    \pause
+    \item Write programs (ecosystem is surprisingly good)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{It's a good language}
+  \begin{itemize}
+    \pause
+    \item Expressive
+    \pause
+    \item Reliable
+    \pause
+    \item Easy to support
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Used for}
+  \begin{itemize}
+    \pause
+    \item Compilers
+    \pause
+    \item Code analyzers
+    \pause
+    \item Blockchain \shrug
+    \pause
+    \item Web backend
+    \pause
+    \item \dots
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Functional}
+  \begin{itemize}
+    \pause
+    \item Broadly speaking, functional = Haskell
+    \pause
+    \item Functions are first-class citizens
+    \pause
+    \item Program is an expression rather than a list of instructions
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pure}
+  \begin{itemize}
+    \pause
+    \item Immutability
+    \pause
+    \item No side effects
+    \pause
+    \item Result of the function is always the same
+  \end{itemize}
+  \pause
+  \vspace{1ex}
+  Useful for:
+  \begin{itemize}
+    \pause
+    \item Equational reasoning
+    \pause
+    \item Refactoring
+    \pause
+    \item Parallelism
+    \pause
+    \item Easier reasoning
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Lazy}
+  \begin{itemize}
+    \pause
+    \item User-defined control structures
+    \pause
+    \item Infinite data structures
+    \pause
+    \item Efficient functional programming for free
+      (e.g.\ efficient higher-order functions)
+    \pause
+    \item However, sometimes it makes things more complicated
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Types}
+  \begin{itemize}
+    \pause
+    \item Algebraic Data Types
+    \pause
+    \item Powerful parametric polymorphism
+    \pause
+    \item Higher-kinded types
+    \pause
+    \item Type classes
+    \pause
+    \item Type inference
+    \pause
+    \item Many more
+    \pause
+    \item FP + Types = Win
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Let's jump right in}
+  \pause
+  \begin{itemize}
+    \item \href{https://gist.github.com/artemohanjanyan/a76faddf75e325dd04624680e89bd93b}
+      {Treap a.k.a.\ randomized binary search tree}
+    \item \href{https://github.com/LvivHaskell/simple-regex}
+      {Regular expression engine}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Installation}
+  \center
+  \url{https://www.haskellstack.org}
+\end{frame}
+
+\begin{frame}
+  \frametitle{End}
+  \pause
+  \center
+  Thanks for your attention!
+\end{frame}
+
+\end{document}
